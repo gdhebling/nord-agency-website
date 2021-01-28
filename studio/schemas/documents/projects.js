@@ -1,7 +1,10 @@
+import { MdFeaturedPlayList } from 'react-icons/md';
+
 export default {
-  name: 'project',
-  title: 'Project',
+  name: 'projects',
+  title: 'Projects',
   type: 'document',
+  icon: MdFeaturedPlayList,
   initialValue: {
     featured: false,
   },
@@ -28,16 +31,16 @@ export default {
       },
     },
     {
-      name: 'customer',
-      title: 'Customer',
+      name: 'customers',
+      title: 'Customers',
       type: 'reference',
-      to: [{ type: 'customer' }],
+      to: [{ type: 'customers' }],
     },
     {
-      name: 'category',
-      title: 'Category',
+      name: 'categories',
+      title: 'Categories',
       type: 'array',
-      of: [{ type: 'reference', to: { type: 'category' } }],
+      of: [{ type: 'reference', to: { type: 'categories' } }],
     },
     {
       name: 'mainImage',
@@ -53,7 +56,7 @@ export default {
   preview: {
     select: {
       title: 'title',
-      customer: 'customer.name',
+      customer: 'customers.name',
       media: 'mainImage',
     },
     prepare(selection) {

@@ -1,7 +1,10 @@
+import { MdBusiness } from 'react-icons/md';
+
 export default {
-  name: 'teamMember',
-  title: 'Team Member',
+  name: 'customers',
+  title: 'Customers',
   type: 'document',
+  icon: MdBusiness,
   fields: [
     {
       name: 'name',
@@ -10,17 +13,12 @@ export default {
     },
     {
       name: 'image',
-      title: 'Image',
+      title: 'Logo',
       type: 'figure',
     },
     {
-      name: 'position',
-      title: 'Position',
-      type: 'string',
-    },
-    {
-      name: 'linkedinUrl',
-      title: 'LinkedIn URL',
+      name: 'website',
+      title: 'Website',
       type: 'url',
     },
   ],
@@ -28,6 +26,12 @@ export default {
     select: {
       title: 'name',
       media: 'image',
+    },
+    prepare({ title, media }) {
+      return {
+        title: `${title}`,
+        media,
+      };
     },
   },
 };
