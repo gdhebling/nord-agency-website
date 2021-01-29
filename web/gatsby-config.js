@@ -1,6 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: 'Agency Website',
+    // siteUrl: "https://contentfulgatsbywebsite.gtsb.io/",
+    description: 'Nord Agency Website',
+    author: 'Gui Hebling @gdhebling',
   },
   plugins: [
     {

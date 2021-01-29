@@ -2,15 +2,15 @@ import * as React from 'react';
 import Head from '../components/head';
 import Layout from '../components/layout';
 
-const IndexPage = () => {
+const ContactPage = () => {
   return (
     <>
       <Layout>
-        <Head title="Home" />
-        <h1>Home Page</h1>
+        <Head title="Contact" />
+        <h1>Contact Page</h1>
       </Layout>
     </>
   );
 };
 
-export default IndexPage;
+export default ContactPage;
