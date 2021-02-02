@@ -1,13 +1,13 @@
 import * as React from 'react';
-import Head from '../components/head';
 import Layout from '../components/layout';
+import Projects from '../components/projects';
 
 const WorkPage = () => {
   return (
     <>
       <Layout>
-        <Head title="Work" />
         <h1>Work Page</h1>
+        <Projects />
       </Layout>
     </>
   );
