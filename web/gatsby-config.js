@@ -21,12 +21,12 @@ module.exports = {
         dataset: process.env.SANITY_DATASET,
       },
     },
-    'gatsby-plugin-styled-components',
-    'gatsby-plugin-sharp',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sitemap',
-    'gatsby-transformer-sharp',
+    'gatsby-plugin-styled-components',
     `gatsby-plugin-image`,
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
