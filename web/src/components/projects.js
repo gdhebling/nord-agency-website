@@ -1,11 +1,38 @@
 import { useStaticQuery } from 'gatsby';
 import React from 'react';
+import styled from 'styled-components';
 import { urlFor } from '../lib/imageUrl';
+
+const ProjectsGrid = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+`;
+
+const ProjectCard = styled.div`
+  margin: 2rem;
+  border: 1px solid transparent;
+  flex: 0 0 600px;
+`;
+
+const ImageCard = styled.div``;
+
+const ProjectTitle = styled.h2`
+  font-family: 'Roboto', 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans',
+    'Helvetica Neue', sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+`;
+const ProjectDescription = styled.p`
+  font-family: 'Nunito', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: normal;
+`;
 
 function Projects() {
   const data = useStaticQuery(graphql`
     query ProjectsQuery {
-      allSanityProjects {
+      allSanityProjects(filter: { featured: { eq: true } }) {
         nodes {
           id
           title
@@ -46,13 +73,25 @@ function Projects() {
   return (
     <div>
       <h2>Projects component</h2>
-      {data.allSanityProjects.nodes.map((project) => (
-        <div>
-          <h4> {project.title} </h4>
-          <p>{project.customers.name}</p>
-          <img src={urlFor(project.mainImage)} alt="" />
-        </div>
-      ))}
+      <ProjectsGrid>
+        {data.allSanityProjects.nodes.map((project) => (
+          <ProjectCard key={project.id}>
+            <ImageCard>
+              <img
+                src={urlFor(project.mainImage)
+                  .size(600, 600)
+                  .maxWidth(600)
+                  .maxHeight(600)
+                  .fit('clip')
+                  .url()}
+                alt={project.mainImage.alt}
+              />
+            </ImageCard>
+            <ProjectTitle> {project.title} </ProjectTitle>
+            <ProjectDescription>{project.customers.name}</ProjectDescription>
+          </ProjectCard>
+        ))}
+      </ProjectsGrid>
     </div>
   );
 }
