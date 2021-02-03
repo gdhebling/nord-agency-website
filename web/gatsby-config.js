@@ -5,7 +5,7 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: 'nord agency by gdhebling',
+    title: 'Nord Agency by gdhebling',
     titleTemplate: '%s · Oslo, Norway',
     description: 'Nord Agency Website',
     author: '@gdhebling',
@@ -19,6 +19,9 @@ module.exports = {
       options: {
         projectId: process.env.SANITY_PROJECT_ID,
         dataset: process.env.SANITY_DATASET,
+        token: process.env.SANITY_TOKEN,
+        overlayDrafts: true,
+        watchMode: true,
       },
     },
     'gatsby-plugin-react-helmet',
