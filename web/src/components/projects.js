@@ -86,6 +86,7 @@ function Projects() {
                   .url()}
                 alt={project.mainImage.alt}
               />
+              {/* Change img to GatsbySanityImage plugin */}
             </ImageCard>
             <ProjectTitle> {project.title} </ProjectTitle>
             <ProjectDescription>{project.customers.name}</ProjectDescription>
