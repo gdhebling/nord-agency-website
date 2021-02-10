@@ -6,7 +6,7 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: 'Nord Agency by gdhebling',
-    titleTemplate: '%s · Oslo, Norway',
+    titleTemplate: '%s · Nord Agency by gdhebling · Oslo, Norway',
     description: 'Nord Agency Website',
     author: '@gdhebling',
     siteUrl: 'https://gdhebling.com',

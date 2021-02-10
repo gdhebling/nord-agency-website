@@ -7,7 +7,7 @@ const WorkPage = () => {
   return (
     <>
       <Layout>
-        <SEO />
+        <SEO title="Our Work" />
         <h1>Work Page</h1>
         <Projects />
       </Layout>
