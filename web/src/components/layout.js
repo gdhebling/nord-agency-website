@@ -1,12 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
-import GlobalStyle from '../theme/globalStyles';
 import Nav from './nav';
+import styled from 'styled-components';
+import 'normalize.css';
+import GlobalStyle from '../theme/globalStyles';
 
-const Main = styled.main`
-  color: #232129;
-  padding: 0 2rem;
-`;
+const Main = styled.main``;
 
 const Layout = ({ children }) => {
   return (

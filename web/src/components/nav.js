@@ -2,12 +2,22 @@ import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 
+const Header = styled.div`
+  display: flex;
+  position: absolute;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  width: 100%;
+  z-index: 99;
+`;
+
 const NavBar = styled.nav`
   display: flex;
-  align-items: center;
   justify-content: space-between;
-
+  align-items: center;
   padding: 1rem 2rem;
+  width: 100%;
 
   ul {
     display: flex;
@@ -21,10 +31,11 @@ const NavBar = styled.nav`
 
 const Logo = styled.h1`
   font-weight: 900;
+  text-transform: lowercase;
 
   a {
     text-decoration: none;
-    color: #232129;
+    color: #fdfdfd;
     transition: all 200ms ease;
 
     &:hover {
@@ -33,10 +44,11 @@ const Logo = styled.h1`
   }
 `;
 
-const NavLink = styled(Link)`
+const NavItem = styled(Link)`
   text-decoration: none;
   font-weight: bold;
-  color: #232129;
+  text-transform: lowercase;
+  color: #fdfdfd;
 
   transition: all 200ms ease;
 
@@ -48,25 +60,24 @@ const NavLink = styled(Link)`
 const Nav = () => {
   return (
     <>
-      <NavBar>
-        <Logo>
-          <Link to="/">Logo</Link>
-        </Logo>
-        <ul>
-          {/* <li>
-            <NavLink to="/">Home</NavLink>
-          </li> */}
-          <li>
-            <NavLink to="/work">Work</NavLink>
-          </li>
-          <li>
-            <NavLink to="/about">About</NavLink>
-          </li>
-          <li>
-            <NavLink to="/contact">Contact</NavLink>
-          </li>
-        </ul>
-      </NavBar>
+      <Header>
+        <NavBar>
+          <Logo>
+            <Link to="/">Nord</Link>
+          </Logo>
+          <ul>
+            <li>
+              <NavItem to="/work">Work</NavItem>
+            </li>
+            <li>
+              <NavItem to="/about">About</NavItem>
+            </li>
+            <li>
+              <NavItem to="/contact">Contact</NavItem>
+            </li>
+          </ul>
+        </NavBar>
+      </Header>
     </>
   );
 };
