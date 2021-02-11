@@ -4,14 +4,56 @@ import styled from 'styled-components';
 
 export const links = ['work', 'about', 'contact'];
 
+const Nav = ({ navPrimary }) => {
+  return (
+    <>
+      <Header navPrimary={navPrimary}>
+        <NavBar>
+          <Logo navPrimary={navPrimary}>
+            <Link to="/">Nord</Link>
+          </Logo>
+          <ul>
+            {links.map((link) => (
+              <li key={link}>
+                <NavItem navPrimary={navPrimary} to={`/${link}`}>
+                  {link}
+                </NavItem>
+              </li>
+            ))}
+          </ul>
+        </NavBar>
+      </Header>
+    </>
+  );
+};
+
+export default Nav;
+
 const Header = styled.div`
   display: flex;
-  position: absolute;
+  position: ${(props) => (props.navPrimary ? 'fixed' : 'static')};
   justify-content: space-between;
   align-items: center;
-  background: transparent;
+  background: ${(props) => (props.navPrimary ? 'transparent' : '#fff')};
+  min-height: 10vh;
   width: 100%;
+  top: 0;
   z-index: 99;
+`;
+
+const Logo = styled.h1`
+  font-weight: 900;
+  text-transform: lowercase;
+
+  a {
+    text-decoration: none;
+    color: ${(props) => (props.navPrimary ? '#fdfdfd' : '#212121')};
+    transition: all 200ms ease;
+
+    &:hover {
+      color: rebeccapurple;
+    }
+  }
 `;
 
 const NavBar = styled.nav`
@@ -31,26 +73,11 @@ const NavBar = styled.nav`
   }
 `;
 
-const Logo = styled.h1`
-  font-weight: 900;
-  text-transform: lowercase;
-
-  a {
-    text-decoration: none;
-    color: #fdfdfd;
-    transition: all 200ms ease;
-
-    &:hover {
-      color: rebeccapurple;
-    }
-  }
-`;
-
 const NavItem = styled(Link)`
   text-decoration: none;
   font-weight: bold;
   text-transform: lowercase;
-  color: #fdfdfd;
+  color: ${(props) => (props.navPrimary ? '#fdfdfd' : '#212121')};
 
   transition: all 200ms ease;
 
@@ -58,26 +85,3 @@ const NavItem = styled(Link)`
     color: rebeccapurple;
   }
 `;
-
-const Nav = () => {
-  return (
-    <>
-      <Header>
-        <NavBar>
-          <Logo>
-            <Link to="/">Nord</Link>
-          </Logo>
-          <ul>
-            {links.map((link) => (
-              <li key={link}>
-                <NavItem to={`/${link}`}>{link}</NavItem>
-              </li>
-            ))}
-          </ul>
-        </NavBar>
-      </Header>
-    </>
-  );
-};
-
-export default Nav;
