@@ -7,11 +7,11 @@ import Footer from './footer';
 
 const Main = styled.main``;
 
-const Layout = ({ children }) => {
+const Layout = ({ children, navPrimary }) => {
   return (
     <>
       <GlobalStyle />
-      <Nav />
+      <Nav navPrimary={navPrimary} />
       <Main>{children}</Main>
       <Footer />
     </>

@@ -6,7 +6,7 @@ import SEO from '../components/seo';
 const WorkPage = () => {
   return (
     <>
-      <Layout>
+      <Layout navPrimary={false}>
         <SEO title="Our Work" />
         <h1>Work Page</h1>
         <Projects />
