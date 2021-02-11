@@ -2,6 +2,8 @@ import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 
+export const links = ['work', 'about', 'contact'];
+
 const Header = styled.div`
   display: flex;
   position: absolute;
@@ -66,15 +68,11 @@ const Nav = () => {
             <Link to="/">Nord</Link>
           </Logo>
           <ul>
-            <li>
-              <NavItem to="/work">Work</NavItem>
-            </li>
-            <li>
-              <NavItem to="/about">About</NavItem>
-            </li>
-            <li>
-              <NavItem to="/contact">Contact</NavItem>
-            </li>
+            {links.map((link) => (
+              <li key={link}>
+                <NavItem to={`/${link}`}>{link}</NavItem>
+              </li>
+            ))}
           </ul>
         </NavBar>
       </Header>
