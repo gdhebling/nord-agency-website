@@ -1,8 +1,5 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { StyledIconBase } from '@styled-icons/styled-icon';
-import { FacebookF, Instagram, LinkedinIn } from '@styled-icons/fa-brands';
-
 import { FaFacebookF, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
 
 const FooterWrapper = styled.footer`
@@ -45,16 +42,6 @@ const StyledLinkedInIcon = styled(FaLinkedinIn)`
 const StyledInstagramIcon = styled(FaInstagram)`
   ${StyledSocialMediaIcons}
 `;
-
-/* const FooterSocialMedia = styled.div`
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-
-  ${StyledIconBase} {
-    margin: 0 0.2rem;
-  }
-`; */
 
 const Footer = () => {
   return (
