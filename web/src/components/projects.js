@@ -2,6 +2,7 @@ import { useStaticQuery } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 import { urlFor } from '../lib/imageUrl';
+import { graphql } from 'gatsby';
 
 const ProjectsGrid = styled.div`
   display: flex;
