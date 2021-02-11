@@ -24,6 +24,7 @@ const ProjectTitle = styled.h2`
     'Helvetica Neue', sans-serif;
   font-size: 2rem;
   font-weight: 500;
+  margin: 0.5rem 0;
 `;
 const ProjectDescription = styled.p`
   font-family: 'Nunito', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -73,7 +74,6 @@ function Projects() {
 
   return (
     <div>
-      <h2>Projects component</h2>
       <ProjectsGrid>
         {data.allSanityProjects.nodes.map((project) => (
           <ProjectCard key={project.id}>
