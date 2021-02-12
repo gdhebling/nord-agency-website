@@ -1,5 +1,4 @@
 import React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import heroImg from '../images/hero-image.jpg';
 import textImg from '../images/hero-text-background.jpg';
