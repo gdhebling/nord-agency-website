@@ -69,5 +69,6 @@ yarn.lock
 
 # Secrets
 .env.development
+.env.production
 *.txt
 todo.md
