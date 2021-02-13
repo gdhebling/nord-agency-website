@@ -12,7 +12,7 @@ const Nav = ({ navPrimary }) => {
           <Logo navPrimary={navPrimary}>
             <Link to="/">Nord</Link>
           </Logo>
-          <ul>
+          {/* <ul>
             {links.map((link) => (
               <li key={link}>
                 <NavItem navPrimary={navPrimary} to={`/${link}`}>
@@ -20,7 +20,7 @@ const Nav = ({ navPrimary }) => {
                 </NavItem>
               </li>
             ))}
-          </ul>
+          </ul> */}
         </NavBar>
       </Header>
     </>
@@ -30,7 +30,7 @@ const Nav = ({ navPrimary }) => {
 export default Nav;
 
 const Header = styled.div(({ navPrimary }) => [
-  tw`flex absolute bg-transparent justify-between items-center top-0 z-50 w-full h-24 px-6 `,
+  tw`flex absolute bg-transparent justify-between items-center top-0 z-50 w-full h-10v px-6 `,
 
   !navPrimary && tw`static bg-white`,
 ]);
@@ -52,14 +52,14 @@ const Logo = styled.h1(({ navPrimary }) => [
 ]);
 
 const NavBar = styled.nav`
-  ${tw`flex justify-between items-center w-full p-4`};
+  ${tw`flex justify-center sm:justify-between items-center w-full p-4`};
 
   ul {
     ${tw`flex`}
   }
 `;
 
-const NavItem = styled(Link)(({ navPrimary }) => [
+/* const NavItem = styled(Link)(({ navPrimary }) => [
   tw`no-underline font-bold text-base lowercase px-6 text-blueGray-50 transition`,
 
   css`
@@ -70,3 +70,4 @@ const NavItem = styled(Link)(({ navPrimary }) => [
 
   !navPrimary && tw`text-blueGray-900`,
 ]);
+ */
