@@ -1,6 +1,6 @@
 import { Link } from 'gatsby';
 import React from 'react';
-import styled from 'styled-components';
+import tw, { styled, css } from 'twin.macro';
 
 export const links = ['work', 'about', 'contact'];
 
@@ -29,59 +29,44 @@ const Nav = ({ navPrimary }) => {
 
 export default Nav;
 
-const Header = styled.div`
-  display: flex;
-  position: ${(props) => (props.navPrimary ? 'fixed' : 'static')};
-  justify-content: space-between;
-  align-items: center;
-  background: ${(props) => (props.navPrimary ? 'transparent' : '#fff')};
-  min-height: 10vh;
-  width: 100%;
-  top: 0;
-  z-index: 99;
-`;
+const Header = styled.div(({ navPrimary }) => [
+  tw`flex absolute bg-transparent justify-between items-center top-0 z-50 w-full h-24 px-6 `,
 
-const Logo = styled.h1`
-  font-weight: 900;
-  text-transform: lowercase;
+  !navPrimary && tw`static bg-white`,
+]);
 
-  a {
-    text-decoration: none;
-    color: ${(props) => (props.navPrimary ? '#fdfdfd' : '#212121')};
-    transition: all 200ms ease;
+const Logo = styled.h1(({ navPrimary }) => [
+  tw`font-black text-2xl text-blueGray-50 lowercase transition`,
+
+  css`
+    a {
+      ${tw`no-underline`}
+    }
 
     &:hover {
-      color: rebeccapurple;
+      ${tw`text-blueGray-400`}
     }
-  }
-`;
+  `,
+
+  !navPrimary && tw`text-blueGray-900`,
+]);
 
 const NavBar = styled.nav`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  width: 100%;
+  ${tw`flex justify-between items-center w-full p-4`};
 
   ul {
-    display: flex;
-  }
-
-  li {
-    list-style: none;
-    padding: 0 2rem;
+    ${tw`flex`}
   }
 `;
 
-const NavItem = styled(Link)`
-  text-decoration: none;
-  font-weight: bold;
-  text-transform: lowercase;
-  color: ${(props) => (props.navPrimary ? '#fdfdfd' : '#212121')};
+const NavItem = styled(Link)(({ navPrimary }) => [
+  tw`no-underline font-bold text-base lowercase px-6 text-blueGray-50 transition`,
 
-  transition: all 200ms ease;
+  css`
+    &:hover {
+      ${tw`text-blueGray-400`}
+    }
+  `,
 
-  &:hover {
-    color: rebeccapurple;
-  }
-`;
+  !navPrimary && tw`text-blueGray-900`,
+]);
