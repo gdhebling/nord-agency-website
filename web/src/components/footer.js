@@ -1,30 +1,27 @@
 import React from 'react';
+
 import styled, { css } from 'styled-components';
 import { FaFacebookF, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
+import tw from 'twin.macro';
 
 const FooterWrapper = styled.footer`
-  height: 40vh;
-  align-items: center;
-  justify-content: space-evenly;
-  padding: 3rem;
-  display: flex;
-  background: #f6f7fa;
+  ${tw`h-60v sm:h-40v flex flex-col sm:flex-row items-center justify-evenly py-12 bg-blueGray-100`}
 `;
 
 const FooterColumn = styled.div`
-  text-align: left;
+  ${tw`text-center m-2 sm:m-0 sm:text-left`}
 `;
 
 const FooterTitle = styled.h4`
-  font-size: 1.5rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin: 1rem 0;
+  ${tw`text-2xl font-bold uppercase my-4`}
 `;
 
 const FooterItem = styled.p`
-  font-size: 1rem;
-  margin: 0.5rem 0;
+  ${tw`text-base my-2 mx-0`}
+`;
+
+const SocialMediaWrapper = styled(FooterColumn)`
+  ${tw`flex my-4`}
 `;
 
 const StyledSocialMediaIcons = css`
@@ -58,11 +55,11 @@ const Footer = () => {
         <FooterItem>0152 Oslo, Norway</FooterItem>
       </FooterColumn>
 
-      <FooterColumn>
+      <SocialMediaWrapper>
         <StyledFacebookIcon />
         <StyledLinkedInIcon />
         <StyledInstagramIcon />
-      </FooterColumn>
+      </SocialMediaWrapper>
     </FooterWrapper>
   );
 };
