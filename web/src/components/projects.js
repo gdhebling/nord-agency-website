@@ -3,32 +3,29 @@ import React from 'react';
 import styled from 'styled-components';
 import { urlFor } from '../lib/imageUrl';
 import { graphql } from 'gatsby';
+import tw from 'twin.macro';
 
 const ProjectsGrid = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  ${tw`container mx-auto flex items-center justify-center flex-wrap`}
 `;
 
 const ProjectCard = styled.div`
-  margin: 2rem;
-  border: 1px solid transparent;
-  flex: 0 0 600px;
+  ${tw`m-8 border-2 border-solid border-transparent flex flex-col flex-wrap text-center sm:text-left`}
 `;
 
-const ImageCard = styled.div``;
+const ImageCard = styled.div`
+  ${tw`overflow-hidden`}
+
+  img {
+    ${tw`object-cover object-center h-full w-full`}
+  }
+`;
 
 const ProjectTitle = styled.h2`
-  font-family: 'Roboto', 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans',
-    'Helvetica Neue', sans-serif;
-  font-size: 2rem;
-  font-weight: 500;
-  margin: 0.5rem 0;
+  ${tw`text-3xl sm:text-4xl font-medium text-blueGray-900 mt-3`}
 `;
 const ProjectDescription = styled.p`
-  font-family: 'Nunito', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: normal;
+  ${tw`font-normal mt-3`}
 `;
 
 function Projects() {
