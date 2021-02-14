@@ -9,7 +9,7 @@ module.exports = {
     titleTemplate: '%s · Nord Agency by gdhebling · Oslo, Norway',
     description: 'Nord Agency Website',
     author: '@gdhebling',
-    siteUrl: 'https://gdhebling.com',
+    siteUrl: 'https://nord-agency-gdhebling.netlify.app/',
     image: '/images/website-thumbnail.png',
     twitterUsername: '@gdhebling',
   },
