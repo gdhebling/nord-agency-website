@@ -37,7 +37,7 @@ This combination of Gatsby and Sanity as headless CMS provides better performanc
 
 ### Research
 
-I started the project researching and looking for inspiration using websites such as Dribbble and other renamed agencies from Oslo and other countries of Europe.
+I started the project researching and looking for inspiration using websites such as Dribbble and other renowned agencies from Oslo and other countries of Europe.
 
 ### Concept
 
