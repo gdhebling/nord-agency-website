@@ -6,7 +6,7 @@ import textImg from '../images/hero-text-background.jpg';
 
 const HeroDiv = styled.div`
   ${tw`flex items-center justify-center h-100v w-full bg-cover m-0`}
-  background: url(${heroImg}) 50% 57% no-repeat;
+  background: url(${heroImg}) 50% 58% no-repeat;
 `;
 
 const HeroImageWrapper = styled.div`
@@ -14,7 +14,7 @@ const HeroImageWrapper = styled.div`
 `;
 
 const HeroText = styled.h1`
-  ${tw`text-7xl sm:text-9xl sm:leading-75p font-bold uppercase text-center whitespace-pre-wrap `}
+  ${tw`text-7xl sm:text-9xl sm:leading-75p sm:py-4 font-bold uppercase text-center whitespace-pre-wrap `}
 
   background: url(${textImg}) 50% 30% no-repeat;
   background-size: cover;
