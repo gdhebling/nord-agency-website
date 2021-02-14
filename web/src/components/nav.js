@@ -12,15 +12,17 @@ const Nav = ({ navPrimary }) => {
           <Logo navPrimary={navPrimary}>
             <Link to="/">Nord</Link>
           </Logo>
-          {/* <ul>
-            {links.map((link) => (
-              <li key={link}>
-                <NavItem navPrimary={navPrimary} to={`/${link}`}>
-                  {link}
-                </NavItem>
-              </li>
-            ))}
-          </ul> */}
+          <NavItemsWrapper>
+            <ul>
+              {links.map((link) => (
+                <li key={link}>
+                  <NavItem navPrimary={navPrimary} to={`/${link}`}>
+                    {link}
+                  </NavItem>
+                </li>
+              ))}
+            </ul>
+          </NavItemsWrapper>
         </NavBar>
       </Header>
     </>
@@ -30,13 +32,13 @@ const Nav = ({ navPrimary }) => {
 export default Nav;
 
 const Header = styled.div(({ navPrimary }) => [
-  tw`flex absolute bg-transparent justify-between items-center top-0 z-50 w-full h-10v px-6 `,
+  tw`flex absolute bg-transparent justify-between items-center top-0 z-50 w-full h-20v sm:h-10v px-6 `,
 
   !navPrimary && tw`static bg-white`,
 ]);
 
 const Logo = styled.h1(({ navPrimary }) => [
-  tw`font-black text-2xl text-blueGray-50 lowercase transition`,
+  tw`font-black text-2xl sm:text-3xl text-blueGray-50 lowercase transition`,
 
   css`
     a {
@@ -52,14 +54,18 @@ const Logo = styled.h1(({ navPrimary }) => [
 ]);
 
 const NavBar = styled.nav`
-  ${tw`flex justify-center sm:justify-between items-center w-full p-4`};
+  ${tw`flex flex-col sm:flex-row justify-center sm:justify-between items-center w-full h-full p-4`};
 
   ul {
     ${tw`flex`}
   }
 `;
 
-/* const NavItem = styled(Link)(({ navPrimary }) => [
+const NavItemsWrapper = styled.div`
+  ${tw`my-6`}
+`;
+
+const NavItem = styled(Link)(({ navPrimary }) => [
   tw`no-underline font-bold text-base lowercase px-6 text-blueGray-50 transition`,
 
   css`
@@ -70,4 +76,3 @@ const NavBar = styled.nav`
 
   !navPrimary && tw`text-blueGray-900`,
 ]);
- */
