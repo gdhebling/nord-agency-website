@@ -9,7 +9,7 @@ const FooterWrapper = styled.footer`
 `;
 
 const FooterColumn = styled.div`
-  ${tw`text-center m-2 sm:m-0 sm:text-left`}
+  ${tw`text-center m-2 sm:m-0 sm:text-left flex flex-col`}
 `;
 
 const FooterTitle = styled.h4`
@@ -20,14 +20,16 @@ const FooterItem = styled.p`
   ${tw`text-base my-2 mx-0`}
 `;
 
+const ContactInfo = styled.a`
+  ${tw`text-base my-2 mx-0 transition cursor-pointer hover:text-blueGray-500`}
+`;
+
 const SocialMediaWrapper = styled(FooterColumn)`
-  ${tw`flex my-4`}
+  ${tw`flex my-4 flex-row`}
 `;
 
 const StyledSocialMediaIcons = css`
-  cursor: pointer;
-  font-size: 2rem;
-  margin: 0 0.5rem;
+  ${tw`text-3xl mx-2 transition cursor-pointer hover:text-blueGray-500`}
 `;
 
 const StyledFacebookIcon = styled(FaFacebookF)`
@@ -45,8 +47,10 @@ const Footer = () => {
     <FooterWrapper>
       <FooterColumn>
         <FooterTitle>Contact Us</FooterTitle>
-        <FooterItem>hei@nord.no</FooterItem>
-        <FooterItem>+47 12 34 56 78</FooterItem>
+        <ContactInfo href="mailto:hei@nord.no?subject=Hei, Nord!">
+          hei@nord.no
+        </ContactInfo>
+        <ContactInfo href="tel:+4712345678">+47 12 34 56 78</ContactInfo>
       </FooterColumn>
 
       <FooterColumn>
@@ -57,8 +61,8 @@ const Footer = () => {
 
       <SocialMediaWrapper>
         <StyledFacebookIcon />
-        <StyledLinkedInIcon />
         <StyledInstagramIcon />
+        <StyledLinkedInIcon />
       </SocialMediaWrapper>
     </FooterWrapper>
   );
