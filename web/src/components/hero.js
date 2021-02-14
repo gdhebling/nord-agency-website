@@ -1,34 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
+import tw from 'twin.macro';
 import heroImg from '../images/hero-image.jpg';
 import textImg from '../images/hero-text-background.jpg';
 
 const HeroDiv = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: url(${heroImg}) 50% 55% no-repeat;
-  height: 100vh;
-  width: 100%;
-  background-size: cover;
-  max-width: 3000px;
-  margin: 0;
+  ${tw`flex items-center justify-center h-100v w-full bg-cover m-0`}
+  background: url(${heroImg}) 50% 57% no-repeat;
 `;
 
 const HeroImageWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  ${tw`flex items-center justify-center`}
 `;
 
 const HeroText = styled.h1`
-  font-size: 9rem;
-  font-weight: bolder;
-  text-transform: uppercase;
-  text-align: center;
-  white-space: pre-wrap;
-  line-height: 75%;
+  ${tw`text-7xl sm:text-9xl sm:leading-75p font-bold uppercase text-center whitespace-pre-wrap `}
 
   background: url(${textImg}) 50% 30% no-repeat;
   background-size: cover;
