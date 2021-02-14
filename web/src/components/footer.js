@@ -5,7 +5,7 @@ import { FaFacebookF, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
 import tw from 'twin.macro';
 
 const FooterWrapper = styled.footer`
-  ${tw`h-60v sm:h-40v flex flex-col sm:flex-row items-center justify-evenly py-12 bg-blueGray-100`}
+  ${tw`h-full sm:h-40v flex flex-col sm:flex-row items-center justify-evenly py-12 bg-blueGray-100`}
 `;
 
 const FooterColumn = styled.div`

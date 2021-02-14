@@ -19,7 +19,7 @@ const AboutHome = () => {
 export default AboutHome;
 
 const AboutWrapper = styled.div`
-  ${tw`container h-70v mx-auto p-8 flex flex-col items-center justify-center text-center`}
+  ${tw`container h-full sm:h-70v mx-auto p-8 flex flex-col items-center justify-center text-center`}
 `;
 
 const TitleAbout = styled.h2`
