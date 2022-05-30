@@ -70,7 +70,7 @@ Gui Hebling -
 https://gdhebling.com
 
 <p align="left">
-<a href="https://gdhebling.com"><img alt="website" width="26px" src="https://www.flaticon.com/svg/static/icons/svg/1828/1828555.svg" /></a>
+<a href="https://gdhebling.com"><img alt="website" width="26px" src="https://image.flaticon.com/icons/png/512/1828/1828555.png" /></a>
 &nbsp;&nbsp;
 <a href="https://www.linkedin.com/in/gdhebling/"><img alt="linkedin" width="26px" src="https://image.flaticon.com/icons/svg/1383/1383262.svg" /></a>
 &nbsp;&nbsp;
