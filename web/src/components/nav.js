@@ -13,7 +13,7 @@ const Nav = ({ navPrimary }) => {
             <Link to="/">Nord</Link>
           </Logo>
           <NavItemsWrapper>
-            <ul>
+            {/* <ul>
               {links.map((link) => (
                 <li key={link}>
                   <NavItem navPrimary={navPrimary} to={`/${link}`}>
@@ -21,7 +21,7 @@ const Nav = ({ navPrimary }) => {
                   </NavItem>
                 </li>
               ))}
-            </ul>
+            </ul> */}
           </NavItemsWrapper>
         </NavBar>
       </Header>
